@@ -167,43 +167,115 @@
 %% ====================================
 %% ====================================
 \section{Introdução}
-Explique nesta primeira seção qual seria o perfil do caso. Perfil do cliente, quantidade de colaboradores, quantidade de equipamentos de TI atualmente.
 
-Indique também nesta seção o escopo do projeto.
+A empresa Moura Contabilidade e Assessoria Ltda atua na consultoria, gestão contábil e gestão tributária. Ela participa de todos os passos da administração de uma empresa, desde sua constituição até seu encerramento. Solucionam diversos problemas que surgem na rotina contábil empresarial. Também atuam na emissão de relatórios com o objetivo de auxiliar as empresas na tomada de decisões mais assertivas. Além disso, auxiliam com suporte para gestão tributária de forma a adequar a empresa as normas contábeis e legislação vigente.
 
-Apresente um overview do parque tecnológico do caso.
+A empresa possui o corpo funcional de: 2 Diretores, 4 Recepcionistas, 1 Assistente Administrativo, 2 Analistas de Sistemas, 4 Administradores e 10 Contadores.
+
+Por se tratar de uma empresa nova, a instalação do cabeamento estruturado de redes será implantada de forma inicial após a criação do projeto.
+
 \subsection{Benefícios}
-Explique quais seriam os benefícios provenientes após a execução deste projeto.
-
-\subsection{Organizações Envolvidas}
-Coloque o nome de todas as organizações envolvidas. Se for um projeto real, identifique quais as responsabilidades de cada uma das organizações. É comum que em um projeto de redes (cabeamento), temos várias organizações, sendo que cada uma delas com uma determinada responsabilidade.
-
-Sugestão: crie uma tabela contento a relação delas.
-
-
-
-\section{Estado atual}
-Aprente o estado atual da rede. Caso não tenha rede, desconsiderar esta seção.
-
-Caso tenha rede, deixe claro:
+Os principais benefícios que serão obtidos com o cabeamento estruturado serão:
 \begin{itemize}
-	\item os passivos de rede atuais:path panels, cabos, etc..;
-	\item as principais reclamações dos usuários. Qual o principal motivo da reestruturação? Efetue uma pesquisa junto aos colaboradores para determinar quais problemas a rede apresenta.
-	\item Observações. Analise a rede e verifique se há estruturas que não se enquadram nas normas ou que indicam suspeita de problemas.
+\item Fornecimento de serviços básicos de rede de computadores para a empresa
+\item Aumento e melhoria de segurança da informação
+\item Compartilhamento seguro de arquivos entre os computadores da rede
+\item Sistema de backup e redundância com possibilidade de Disaster Recovery
+\item Controle de acesso
+\item Internet de alta velocidade compartilhada entre os computadores da rede
+\item Melhoria do desempenho da rede
+\item Maior facilidade de identificação de erros na rede e com isso manutenção mais rápida
+\item Facilidade de gerenciamento do ambiente de TI da empresa
 \end{itemize}
+	
+\subsection{Organizações Envolvidas}
+Tabela com a relação das organizações envolvidas:
+
+\begin{table}[]
+	\begin{tabular}{|l|l|}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Profissional/Empresa}} & \multicolumn{1}{c|}{\textbf{Serviço}}                         \\ \hline
+		Provedor de Internet 1                              & Serviço de acesso à Internet                                  \\ \hline
+		Provedor de Internet 2                              & Serviço de acesso à Internet para redundância                 \\ \hline
+		Engenheiro Eletricista                              & Instalações elétricas demandadas                              \\ \hline
+		Analista de Compras                                 & Orçamentos e compras de equipamentos                          \\ \hline
+		Projetista de Rede                                  & Projeto da rede física e lógica                               \\ \hline
+		Instalador da Rede                                  & Profissional ou equipe para instalar a rede física            \\ \hline
+		Telecom Local                                       & Instala/remaneja os troncos telefônicos                       \\ \hline
+		Empresa de Telefonia                                & Profissional ou equipe para instalar PABX e cabos telefônicos \\ \hline
+		ANATEL                                              & Órgão de fiscalização de Telecomunicação                      \\ \hline
+	\end{tabular}
+\end{table}
+
 
 \section{Requisitos}
-Crie uma enumeração dos requisitos do projeto.
+
+Nesta seção serão apresentados os principais requisitos do projeto de cabeamento estruturado da rede:	
+
+\begin{itemize}				
+\item A rede deverá permitir acessos simultâneos a Internet, para isso contará com largura de banda suficientemente alta para ser compartilhada por vários PCs
+\item A rede deverá permitir o compartilhamento de arquivos na rede, para isso utilizará de um servidor de arquivos com alta capacidade de armazenamento 
+\item A rede deverá permitir o compartilhamento de impressoras, para isso deverão ser configurados pontos de rede para o compartilhamento de impressoras.		
+\item A rede deverá bloquear o acesso a sites com conteúdos indesejáveis, para isso possuirá um servidor proxy para filtrar conteúdos indesejáveis de forma a atender a política da empresa.
+\item A rede deverá ter garantia de funcionamento e confiabilidade do acesso a Internet, para isso possuirá link redundante de Internet, tanto no meio físico quanto na operadora, de forma a garantir a disponibilidade.
+\item A rede possuirá servidores de backup com os softwares necessários para Disaster Recover, com isso será garantida a cópia de segurança dos dados e com possibilidade de rápida recuperação.
+\item A rede deverá garantir a segurança das informações utilizando um firewall contra intrusos, para isso utilizará o mesmo servidor proxy para acesso a internet.
+\end{itemize}
 
 \section{Usuários e Aplicativos}
-Explique nesta seção os usuários atuais e o perfil de crescimento, se por exemplo, há estimativa na evolução da empresa no que tange a quantidade de usuários, pontos de redes, equipamentos.
- 
+Nesta seção serão descritos os profissionais que trabalham na empresa e que farão uso do cabeamento estruturado. Com isso será apresentado o tipo de usuário e os aplicativos que ele mais utiliza. 
 
 \subsection{Usuários}
-Crie uma relação da quantidade, perfil de usuários de seu projeto.
+
+\begin{table}[]
+	\begin{tabular}{|l|l|}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Usuário}} & \multicolumn{1}{c|}{\textbf{Aplicativos mais utilizados}}                                                                           \\ \hline
+		Diretor 1 a 2                          & Windows 10, Microsoft Office Professional 2016, Microsoft Outlook e Mozilla Firefox                                                 \\ \hline
+		Recepcionista 1 a 4                    & Windows 10, Microsoft Office Professional 2016 e Microsoft Outlook                                                                  \\ \hline
+		Assistente Administrativo              & Windows 10, Microsoft Office Professional 2016, Microsoft Outlook e Mozilla Firefox                                                 \\ \hline
+		Analista de Sistemas 1                 & Windows Server 2016, SQL Server 2017, Microsoft System Center Configuration Manager, Cisco IOS, Mozilla Firefox e Microsoft Outlook \\ \hline
+		Analista de Sistemas 2                 & Windows 10, Microsoft Office Professional 2016, Mozilla Firefox, Microsoft Outlook, softwares de desenvolvimento                    \\ \hline
+		Administrador 1 a 4                    & Windows 10, Microsoft Office Professional 2016, Microsoft Outlook, Microsoft Teams e Mozilla Firefox                                \\ \hline
+		Contadores 1 a 10                      & Windows 10, Microsoft Office Professional 2016, Mozilla Firefox e programas fiscais                                                 \\ \hline
+	\end{tabular}
+\end{table}
+
+O Diretor é responsável por planejar, organizar e controlar as atividades da empresa, além de traçar estratégias e métodos de trabalho com o objetivo de desenvolve-lá. É auxiliado pelos Administradores na tomada de decisões. 
+
+Os Administradores são responsáveis por organizar, planejar e orientar o uso dos recursos financeiros, físicos, tecnológicos e humanos da empresa, buscando soluções para todo tipo de problema administrativo. Eles se relacionam com todas as áreas dentro de uma empresa e auxiliam o Diretor nas tomadas de decisões.
+
+O Assistente Administrativo é responsável por ajudar os diretores com tarefas rotineiras de cunho administrativo.
+Os Recepcionistas são responsáveis pelo atendimento telefônico, recepção de clientes, anotação de recados, envio e controle de correspondências, etc.
+
+O Analista de Sistemas 1 é responsável pelo gerenciamento de redes, segurança dos sistemas, gerenciamento de servidores, e qualquer outra atividade relacionada ao suporte de Tecnologia da Informação.
+
+O Analista de Sistemas 2 é responsável pelo desenvolvimento de softwares necessários para a empresa, bem como a página Web da empresa.
+
+Os Contadores atuam no atendimento aos clientes para fins de suporte contábil, econômico e financeiro. São responsáveis por registrar, organizar, demonstrar, analisar e acompanhar as modificações do patrimônio em virtude da atividade econômica ou social que a empresa exerce no contexto econômico.
 
 \subsection{Aplicativos}
-Crie uma relação dos aplicativos e seus níveis críticos de uso.
+
+Nesta seção serão descritos os aplicativos mais utilizados e seu nível crítico de uso:
+
+\begin{table}[]
+	\begin{tabular}{|l|l|}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Aplicativo}} & \multicolumn{1}{c|}{\textbf{Uso}}                                           \\ \hline
+		Microsoft Windows 10                      & Sistema operacional utilizado nas estações de trabalho                      \\ \hline
+		Microsoft Office Professional 2016        & Suíte de aplicativos para criação de textos, planilhas, apresentações, etc  \\ \hline
+		Microsoft Outlook                         & Aplicativo para gerenciamento de emails                                     \\ \hline
+		Mozilla Firefox 68.4.1                    & Navegador utilizado pelos funcionários da empresa                           \\ \hline
+		Microsoft Windows Server 2016             & Sistema operacional utilizado no servidor da empresa                        \\ \hline
+		Microsoft SQL Server 2017                 & Banco de dados utilizado no servidor da empresa                             \\ \hline
+		System Center Configuration Manager       & Programa para gerenciamento distribuído de todos os computadores da empresa \\ \hline
+		Cisco IOS                                 & Sistema operacional dos equipamentos de rede da empresa                     \\ \hline
+		Programas fiscais                         & Programas de uso contábil                                                   \\ \hline
+		Softwares de desenvolvimento              & IDEs de desenvolvimento, compiladores, ferramentas gráficas, etc            \\ \hline
+	\end{tabular}
+\end{table}
+
+A empresa conta com dois servidores, um principal e um secundário. O servidor principal será utilizado no controle de usuário, armazenamento de arquivos, compartilhamento de sistemas, backup, replicação e outros serviços necessário para o funcionamento da empresa. Todo o armazenamento do servidor principal será migrado de forma redundante para o servidor secundário. Assim, caso ocorra algum problema com o servidor principal, não haverá perdas para a empresa.
 
 
 \section{Estrutura predial existente}
