@@ -134,7 +134,7 @@
 %% ====================================
 %% ====================================
 
-\initial{E}\textbf{ste documento consiste na elaboração de um projeto de cabeamento estruturado para a empresa Moura Contabilidade e Assessoria Ltda. O projeto apresenta a planta física, memorial descritivo dos equipamentos passivos da rede, levantamento de quantidade/custo, Plano de Certificação e orçamento e o escopo do projeto..}
+\initial{E}\textbf{ste documento consiste na elaboração de um projeto de cabeamento estruturado para a empresa Moura Contabilidade e Assessoria Ltda. O projeto apresenta a planta física, planta cabeada, topologia, memorial descritivo dos equipamentos passivos da rede, levantamento de quantidade/custo, Plano de Certificação e orçamento e o escopo do projeto.}
 
 
 %% ====================================
@@ -227,18 +227,29 @@ Nesta seção serão descritos os profissionais que trabalham na empresa e que f
 
 \subsection{Usuários}
 
-\begin{table}[]
+A tabela \ref{tab:usuarios} mostra os Usuários com os aplicativos mais utilizados.
+
+
+
+\begin{table}[t]
 	\begin{tabular}{|l|l|}
 		\hline
 		\multicolumn{1}{|c|}{\textbf{Usuário}} & \multicolumn{1}{c|}{\textbf{Aplicativos mais utilizados}}                                                                           \\ \hline
-		Diretor 1 a 2                          & Windows 10, Microsoft Office Professional 2016, Microsoft Outlook e Mozilla Firefox                                                 \\ \hline
-		Recepcionista 1 a 4                    & Windows 10, Microsoft Office Professional 2016 e Microsoft Outlook                                                                  \\ \hline
-		Assistente Administrativo              & Windows 10, Microsoft Office Professional 2016, Microsoft Outlook e Mozilla Firefox                                                 \\ \hline
-		Analista de Sistemas 1                 & Windows Server 2016, SQL Server 2017, Microsoft System Center Configuration Manager, Cisco IOS, Mozilla Firefox e Microsoft Outlook \\ \hline
-		Analista de Sistemas 2                 & Windows 10, Microsoft Office Professional 2016, Mozilla Firefox, Microsoft Outlook, softwares de desenvolvimento                    \\ \hline
-		Administrador 1 a 4                    & Windows 10, Microsoft Office Professional 2016, Microsoft Outlook, Microsoft Teams e Mozilla Firefox                                \\ \hline
-		Contadores 1 a 10                      & Windows 10, Microsoft Office Professional 2016, Mozilla Firefox e programas fiscais                                                 \\ \hline
+		Diretor 1 a 2 & Windows 10, Microsoft Office Professional 2016, Microsoft Outlook e Mozilla Firefox 
+		\\ \hline
+		Recepcionista 1 a 4 & Windows 10, Microsoft Office Professional 2016 e Microsoft Outlook                                                               \\ \hline
+		Assistente Administrativo & Windows 10, Microsoft Office Professional 2016, Microsoft Outlook e Mozilla Firefox 
+		\\ \hline
+		Analista de Sistemas 1 & Windows Server 2016, SQL Server 2017, Microsoft System Center Configuration Manager, Cisco IOS, Mozilla Firefox e Microsoft Outlook 
+		\\ \hline
+		Analista de Sistemas 2 & Windows 10, Microsoft Office Professional 2016, Mozilla Firefox, Microsoft Outlook, softwares de desenvolvimento                    
+		\\ \hline
+		Administrador 1 a 4 & Windows 10, Microsoft Office Professional 2016, Microsoft Outlook, Microsoft Teams e Mozilla Firefox 
+		\\ \hline
+		Contadores 1 a 10 & Windows 10, Microsoft Office Professional 2016, Mozilla Firefox e programas fiscais 
+		\\ \hline
 	\end{tabular}
+	\label{tab:usuarios}
 \end{table}
 
 O Diretor é responsável por planejar, organizar e controlar as atividades da empresa, além de traçar estratégias e métodos de trabalho com o objetivo de desenvolve-lá. É auxiliado pelos Administradores na tomada de decisões. 
@@ -280,25 +291,51 @@ A empresa conta com dois servidores, um principal e um secundário. O servidor p
 
 \section{Estrutura predial existente}
 
-Explique aqui a planta física dos prédios
-Pode ser anexada, em escala ou não.
+Trata-se de uma estrutura predial nova onde será implantado o cabeamento estruturado horizontal. De um modo geral, cada área respeitará a Norma possuindo no mínimo 2 tomadas de telecomunicações, para um máximo de 10m2. Também manterá a distância mínima de 30cm entre tomadas de superfície e piso. Os cabos possuirão a distância máxima de 5m entre a tomada e o equipamento. A planta baixa (figura \ref{planta2d}) se encontra em anexo no fim do projeto. 
 
-Deve conter uma descrição geral, indicando a possível distância entre os pontos de rede e restrições de instalação.
 
 \section{Planta Lógica - Elementos estruturados}
 
-\subsection{Estado atual}
-Deve ter a planta atual, se for o caso
+\subsection{Planta cabeada}
+
+O cabeamento utiliza cabos UTP Categoria 6 para conexão dos equipamentos, LAN Gigabit, equipamentos de alta confiabilidade e protocolo TCP/IP. O acesso à rede externa é provido por duas operadoras de telefonia utilizando fibra ótica com o objetivo de garantir disponibilidade da rede. A instalação será feita pelas operadoras e a configuração/manutenção dos equipamentos terá SLA mínimo de duas horas, 24 X 7. O link possuirá largura de banda de 300Mbps com possibilidade de expansão se necessário. 
+
+A rede possuirá 64 pontos de rede (PT000 até PT063), sendo distribuída da seguinte forma:
+
+\begin{itemize}
+\item Sala de Recepção: 10 pontos de rede
+\item Escritório 1 a 10: 2 pontos de rede por escritório = 20 pontos
+\item Direção Geral: 8 pontos de rede
+\item Direção Administrativa 1 a 4: 4 pontos por direção administrativa = 16 pontos de rede
+\item Sala de Reunião: 6 pontos de rede
+\item Sala de TI: 4 pontos de rede
+\end{itemize}
+
+A planta baixa cabeada (figura \ref{planta2d_cabeada}) se encontra em anexo no fim do projeto. 
 
 \subsection{Topologia}
-Proposta futura, proposta após implantação.
-Deve conter o diagrama da rede. Atente-se a redundância  e ligações truncadas.
-Deve explicar todos termos e componentes utilizados nestas plantas. Por exemplo: entrance facility, work area, horizontal cabling, etc..
 
-Todos os elementos das figuras devem ser explicados. 
-Crie esboço da configuração dos racks e brackets. Explique cada um dos componentes. Você pode criar uma tabela contendo figuras dentro, ou criar uma tabela e incluí-la como imagem. Por exemplo, verifique a tabela \ref{tab1}.
+Basicamente a rede possui um roteador que é o Gateway padrão para a conexão com a internet. A rede também possui dois Switches de 36 portas cada, onde o Switch 1 engloba os pontos de rede PT000 a PT031 e o Switch 2 engloba os pontos de rede PT032 a PT063. O roteador também é conectado aos Switches e aos Servidores 1 e 2. O Terminal serve para operar os servidores localmente. 
 
-\input{tab1}
+A figura \ref{topologia} mostra a topologia a ser implementada.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{topologia}
+	\caption{Diagrama do projeto lógico}
+	\label{topologia}
+\end{figure}
+
+
+% Proposta futura, proposta após implantação.
+% Deve conter o diagrama da rede. Atente-se a redundância  e ligações % truncadas.
+% Deve explicar todos termos e componentes utilizados nestas plantas. Por % exemplo: entrance facility, work area, horizontal cabling, etc..
+
+% Todos os elementos das figuras devem ser explicados. 
+% Crie esboço da configuração dos racks e brackets. Explique cada um dos % componentes. Você pode criar uma tabela contendo figuras dentro, ou % criar uma tabela e incluí-la como imagem. Por exemplo, verifique a % tabela \ref{tab1}.
+
+% \input{tab1}
+
 
 \subsection{Encaminhamento}
 Eletrodutos, calhas, e qualquer material em que os cabos serão alojados/alocados.
@@ -423,6 +460,20 @@ Você pode rotacionar figuras também. Para isso utilize o parâmetro angle=-90.
 	\includegraphics[height=\textwidth,angle=-90]{fig3}
 	\caption{Exemplo de figura rotacionada}
 	\label{fig3}
+\end{figure}
+
+\begin{figure}
+	%	\centering
+	\includegraphics[height=\textwidth,angle=-90,scale=0.8]{planta2d}
+	\caption{Planta baixa da estrutura predial}
+	\label{planta2d}
+\end{figure}
+
+\begin{figure}
+	%	\centering
+	\includegraphics[height=\textwidth,angle=-90,scale=0.8]{planta2d_cabeada}
+	\caption{Planta baixa cabeada}
+	\label{planta2d_cabeada}
 \end{figure}
 
 Você também pode inserir páginas de outro tamanho em seu texto. Isto irá ajudar a inserir imagens maiores, como as desenvolvidas em CAD. Segue um exemplo na figura \ref{fig4} e figura \ref{fig5}.
