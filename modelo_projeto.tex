@@ -229,10 +229,8 @@ Nesta seção serão descritos os profissionais que trabalham na empresa e que f
 
 A tabela \ref{tab:usuarios} mostra os Usuários com os aplicativos mais utilizados.
 
-
-
 \begin{table}[t]
-	\begin{tabular}{|l|l|}
+	\begin{tabular}{|p{5cm}|p{11cm}|}
 		\hline
 		\multicolumn{1}{|c|}{\textbf{Usuário}} & \multicolumn{1}{c|}{\textbf{Aplicativos mais utilizados}}                                                                           \\ \hline
 		Diretor 1 a 2 & Windows 10, Microsoft Office Professional 2016, Microsoft Outlook e Mozilla Firefox 
@@ -249,6 +247,7 @@ A tabela \ref{tab:usuarios} mostra os Usuários com os aplicativos mais utilizad
 		Contadores 1 a 10 & Windows 10, Microsoft Office Professional 2016, Mozilla Firefox e programas fiscais 
 		\\ \hline
 	\end{tabular}
+	\caption{Tabela Usuários}
 	\label{tab:usuarios}
 \end{table}
 
@@ -267,10 +266,10 @@ Os Contadores atuam no atendimento aos clientes para fins de suporte contábil, 
 
 \subsection{Aplicativos}
 
-Nesta seção serão descritos os aplicativos mais utilizados e seu nível crítico de uso:
+A tabela \ref{tab:aplicativos} apresenta os aplicativos mais utilizados e seu nível crítico de uso:
 
 \begin{table}[]
-	\begin{tabular}{|l|l|}
+	\begin{tabular}{|p{6cm}|p{10cm}|}
 		\hline
 		\multicolumn{1}{|c|}{\textbf{Aplicativo}} & \multicolumn{1}{c|}{\textbf{Uso}}                                           \\ \hline
 		Microsoft Windows 10                      & Sistema operacional utilizado nas estações de trabalho                      \\ \hline
@@ -284,6 +283,8 @@ Nesta seção serão descritos os aplicativos mais utilizados e seu nível crít
 		Programas fiscais                         & Programas de uso contábil                                                   \\ \hline
 		Softwares de desenvolvimento              & IDEs de desenvolvimento, compiladores, ferramentas gráficas, etc            \\ \hline
 	\end{tabular}
+	\caption{Tabela Aplicativos}
+	\label{tab:aplicativos}
 \end{table}
 
 A empresa conta com dois servidores, um principal e um secundário. O servidor principal será utilizado no controle de usuário, armazenamento de arquivos, compartilhamento de sistemas, backup, replicação e outros serviços necessário para o funcionamento da empresa. Todo o armazenamento do servidor principal será migrado de forma redundante para o servidor secundário. Assim, caso ocorra algum problema com o servidor principal, não haverá perdas para a empresa.
@@ -327,22 +328,39 @@ A figura \ref{topologia} mostra a topologia a ser implementada.
 \end{figure}
 
 
-% Proposta futura, proposta após implantação.
-% Deve conter o diagrama da rede. Atente-se a redundância  e ligações % truncadas.
-% Deve explicar todos termos e componentes utilizados nestas plantas. Por % exemplo: entrance facility, work area, horizontal cabling, etc..
-
-% Todos os elementos das figuras devem ser explicados. 
-% Crie esboço da configuração dos racks e brackets. Explique cada um dos % componentes. Você pode criar uma tabela contendo figuras dentro, ou % criar uma tabela e incluí-la como imagem. Por exemplo, verifique a % tabela \ref{tab1}.
-
-% \input{tab1}
-
-
 \subsection{Encaminhamento}
-Eletrodutos, calhas, e qualquer material em que os cabos serão alojados/alocados.
+
+O encaminhamento utilizado será canaleta X2 Adesivada em todo o cabeamento estruturado.
 
 \subsection{Memorial descritivo}
 
-Relacione todos os equipamentos passivos que serão utilizados, tipo, fabricante, quantidade.
+O cálculo da quantidade de cabos foi feito utilizando a seguinte fórmula empírica: 
+
+\begin{equation}
+Qc = \frac{(Ponto Mais Proximo + Ponto Mais Distante + 4*PeDireito)*QtdPontos*1,1}{2}
+\end{equation}
+
+\begin{equation}
+Qc = \frac{(1 + 49 + 4*3)*64*1,1}{2} = 2182,4 m
+\end{equation}
+
+A tabela \ref{tab:passivos} apresenta os componentes passivos do cabeamento.
+
+\begin{table}[]
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Equipamento Passivo}} & \multicolumn{1}{c|}{\textbf{Fabricante}} & \multicolumn{1}{c|}{\textbf{Quantidade}} \\ \hline
+		Rack 44 U Fechado                                  & Furukawa                                 & 1                                        \\ \hline
+		Patch Panel 36 Portas CAT 6                        & Furukawa                                 & 2                                        \\ \hline
+		Cabo UTP CAT 6 - 305 m                             & Furukawa                                 & 7                                        \\ \hline
+		Cabo UTP CAT 6 - 100 m                             & Furukawa                                 & 1                                        \\ \hline
+		Patch Cords CAT 6 - 2 m                            & Furukawa                                 & 36                                       \\ \hline
+		Patch Cords CAT 6 - 1,5m                              & Furukawa                                 & 36                                       \\ \hline
+		Tomadas (outlet) CAT6 c/ 1 ponto RJ45              & WEG                                      & 36                                       \\ \hline
+	\end{tabular}
+\caption{Tabela Componentes Passivos}
+\label{tab:passivos}
+\end{table}
 
 \subsection{Identificação dos cabos}
 Explique como os cabos serão identificados em seu projeto. Coloque uma relação dos cabos instalados e identificados.
@@ -379,7 +397,51 @@ Existe um plano de expansão? Quantos novos pontos poderão ser acrecidos na red
 Enumerar e explicar os riscos do projeto.
 
 \section{Orçamento}
-Crie uma relação de orçamentos baseado na seções anteriores.
+
+A tabela \ref{tab:orcPassivos} apresenta o orçamento dos equipamentos passivos.
+
+\begin{table}[]
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Equipamento Passivo}} & \multicolumn{1}{c|}{\textbf{Fabricante}} & \multicolumn{1}{c|}{\textbf{Qt}} & \textbf{Preço} & \textbf{Total (R\$)} \\ \hline
+		Rack 44 U Fechado                                  & Furukawa                                 & 1                                & 3495,00        & 3495,00              \\ \hline
+		Patch Panel 36 Portas CAT 6                        & Furukawa                                 & 2                                & 255,00         & 510,00               \\ \hline
+		Cabo UTP CAT 6 - 305 m                             & Furukawa                                 & 7                                & 670,00         & 4690,00              \\ \hline
+		Cabo UTP CAT 6 - 100 m                             & Furukawa                                 & 1                                & 350,00         & 350,00               \\ \hline
+		Patch Cords CAT 6 - 2 m                            & Furukawa                                 & 36                               & 28,00          & 1008,00              \\ \hline
+		Patch Cords CAT 6 - 1,5m                           & Furukawa                                 & 36                               & 31,00          & 1116,00              \\ \hline
+		Tomadas (outlet) CAT6 c/ 1 ponto RJ45              & WEG                                      & 36                               & 77,00          & 2772,00              \\ \hline
+	\end{tabular}
+\caption{Tabela de Orçamento dos Equipamentos Passivos}
+\label{tab:orcPassivos}
+\end{table}
+
+A tabela \ref{tab:orcEncaminhamentos} apresenta o orçamento dos equipamentos passivos.
+
+\begin{table}[]
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Encaminhamento}} & \multicolumn{1}{c|}{\textbf{Fabricante}} & \multicolumn{1}{c|}{\textbf{Qt}} & \textbf{Preço} & \textbf{Total (R\$)} \\ \hline
+		Canaleta X2 Adesivada                         & Dutoplast                                & 36                               & 31,00          & 1116,00              \\ \hline
+		Acabamento X2                                 & Dutoplast                                & 36                               & 5,00           & 180,00               \\ \hline
+	\end{tabular}
+	\caption{Tabela de Orçamento dos Encaminhamentos}
+	\label{tab:orcEncaminhamentos}
+\end{table}
+
+A tabela \ref{tab:orcAtivos} apresenta os equipamentos ativos do cabeamento estruturado.
+
+\begin{table}[]
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Equipamento Ativo}} & \multicolumn{1}{c|}{\textbf{Fabricante}} & \multicolumn{1}{c|}{\textbf{Qt}} & \textbf{Preço} & \textbf{Total (R\$)} \\ \hline
+		Switch 36 Portas                                 & Sun Oracle                               & 2                                & 1360,00        & 2720,00              \\ \hline
+		Roteador RV340                                   & Cisco                                    & 1                                & 2242,00        & 2242,00              \\ \hline
+		Servidor PowerEdge T140                          & Dell                                     & 2                                & 3600,00        & 7200,00              \\ \hline
+	\end{tabular}
+\caption{Tabela de Orçamento dos Equipamentos Ativos}
+\label{tab:orcAtivos}
+\end{table}
 
 \section{Recomendações}
 Observações e recomendações para o cliente.
