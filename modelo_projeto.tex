@@ -189,24 +189,9 @@ Os principais benefícios que serão obtidos com o cabeamento estruturado serão
 \end{itemize}
 	
 \subsection{Organizações Envolvidas}
-Tabela com a relação das organizações envolvidas:
+Tabela abaixo apresenta a relação das organizações envolvidas com o projeto de cabeamento estruturado:
 
-\begin{table}[]
-	\begin{tabular}{|l|l|}
-		\hline
-		\multicolumn{1}{|c|}{\textbf{Profissional/Empresa}} & \multicolumn{1}{c|}{\textbf{Serviço}}                         \\ \hline
-		Provedor de Internet 1                              & Serviço de acesso à Internet                                  \\ \hline
-		Provedor de Internet 2                              & Serviço de acesso à Internet para redundância                 \\ \hline
-		Engenheiro Eletricista                              & Instalações elétricas demandadas                              \\ \hline
-		Analista de Compras                                 & Orçamentos e compras de equipamentos                          \\ \hline
-		Projetista de Rede                                  & Projeto da rede física e lógica                               \\ \hline
-		Instalador da Rede                                  & Profissional ou equipe para instalar a rede física            \\ \hline
-		Telecom Local                                       & Instala/remaneja os troncos telefônicos                       \\ \hline
-		Empresa de Telefonia                                & Profissional ou equipe para instalar PABX e cabos telefônicos \\ \hline
-		ANATEL                                              & Órgão de fiscalização de Telecomunicação                      \\ \hline
-	\end{tabular}
-\end{table}
-
+\input{organizacoes}
 
 \section{Requisitos}
 
@@ -229,27 +214,7 @@ Nesta seção serão descritos os profissionais que trabalham na empresa e que f
 
 A tabela \ref{tab:usuarios} mostra os Usuários com os aplicativos mais utilizados.
 
-\begin{table}[t]
-	\begin{tabular}{|p{5cm}|p{11cm}|}
-		\hline
-		\multicolumn{1}{|c|}{\textbf{Usuário}} & \multicolumn{1}{c|}{\textbf{Aplicativos mais utilizados}}                                                                           \\ \hline
-		Diretor 1 a 2 & Windows 10, Microsoft Office Professional 2016, Microsoft Outlook e Mozilla Firefox 
-		\\ \hline
-		Recepcionista 1 a 4 & Windows 10, Microsoft Office Professional 2016 e Microsoft Outlook                                                               \\ \hline
-		Assistente Administrativo & Windows 10, Microsoft Office Professional 2016, Microsoft Outlook e Mozilla Firefox 
-		\\ \hline
-		Analista de Sistemas 1 & Windows Server 2016, SQL Server 2017, Microsoft System Center Configuration Manager, Cisco IOS, Mozilla Firefox e Microsoft Outlook 
-		\\ \hline
-		Analista de Sistemas 2 & Windows 10, Microsoft Office Professional 2016, Mozilla Firefox, Microsoft Outlook, softwares de desenvolvimento                    
-		\\ \hline
-		Administrador 1 a 4 & Windows 10, Microsoft Office Professional 2016, Microsoft Outlook, Microsoft Teams e Mozilla Firefox 
-		\\ \hline
-		Contadores 1 a 10 & Windows 10, Microsoft Office Professional 2016, Mozilla Firefox e programas fiscais 
-		\\ \hline
-	\end{tabular}
-	\caption{Tabela Usuários}
-	\label{tab:usuarios}
-\end{table}
+\input{usuarios}
 
 O Diretor é responsável por planejar, organizar e controlar as atividades da empresa, além de traçar estratégias e métodos de trabalho com o objetivo de desenvolve-lá. É auxiliado pelos Administradores na tomada de decisões. 
 
@@ -268,24 +233,7 @@ Os Contadores atuam no atendimento aos clientes para fins de suporte contábil, 
 
 A tabela \ref{tab:aplicativos} apresenta os aplicativos mais utilizados e seu nível crítico de uso:
 
-\begin{table}[]
-	\begin{tabular}{|p{6cm}|p{10cm}|}
-		\hline
-		\multicolumn{1}{|c|}{\textbf{Aplicativo}} & \multicolumn{1}{c|}{\textbf{Uso}}                                           \\ \hline
-		Microsoft Windows 10                      & Sistema operacional utilizado nas estações de trabalho                      \\ \hline
-		Microsoft Office Professional 2016        & Suíte de aplicativos para criação de textos, planilhas, apresentações, etc  \\ \hline
-		Microsoft Outlook                         & Aplicativo para gerenciamento de emails                                     \\ \hline
-		Mozilla Firefox 68.4.1                    & Navegador utilizado pelos funcionários da empresa                           \\ \hline
-		Microsoft Windows Server 2016             & Sistema operacional utilizado no servidor da empresa                        \\ \hline
-		Microsoft SQL Server 2017                 & Banco de dados utilizado no servidor da empresa                             \\ \hline
-		System Center Configuration Manager       & Programa para gerenciamento distribuído de todos os computadores da empresa \\ \hline
-		Cisco IOS                                 & Sistema operacional dos equipamentos de rede da empresa                     \\ \hline
-		Programas fiscais                         & Programas de uso contábil                                                   \\ \hline
-		Softwares de desenvolvimento              & IDEs de desenvolvimento, compiladores, ferramentas gráficas, etc            \\ \hline
-	\end{tabular}
-	\caption{Tabela Aplicativos}
-	\label{tab:aplicativos}
-\end{table}
+\input{aplicativos}
 
 A empresa conta com dois servidores, um principal e um secundário. O servidor principal será utilizado no controle de usuário, armazenamento de arquivos, compartilhamento de sistemas, backup, replicação e outros serviços necessário para o funcionamento da empresa. Todo o armazenamento do servidor principal será migrado de forma redundante para o servidor secundário. Assim, caso ocorra algum problema com o servidor principal, não haverá perdas para a empresa.
 
@@ -340,45 +288,34 @@ O cálculo da quantidade de cabos foi feito utilizando a seguinte fórmula empí
 Qc = \frac{(Ponto Mais Proximo + Ponto Mais Distante + 4*PeDireito)*QtdPontos*1,1}{2}
 \end{equation}
 
+Assim, considerando o PontoMaisProximo = 1m, PontoMaisDistante = 49m, PeDireito = 3m e QtdPontos = 64, temos a quantidade de cabo Qc calculada como:
+
 \begin{equation}
-Qc = \frac{(1 + 49 + 4*3)*64*1,1}{2} = 2182,4 m
+Qc = \frac{(1 + 49 + 4*3)*64*1,1}{2}
+\end{equation}
+
+\begin{equation}
+Qc = 2182,4 m
 \end{equation}
 
 A tabela \ref{tab:passivos} apresenta os componentes passivos do cabeamento.
 
-\begin{table}[]
-	\begin{tabular}{|l|l|l|}
-		\hline
-		\multicolumn{1}{|c|}{\textbf{Equipamento Passivo}} & \multicolumn{1}{c|}{\textbf{Fabricante}} & \multicolumn{1}{c|}{\textbf{Quantidade}} \\ \hline
-		Rack 44 U Fechado                                  & Furukawa                                 & 1                                        \\ \hline
-		Patch Panel 36 Portas CAT 6                        & Furukawa                                 & 2                                        \\ \hline
-		Cabo UTP CAT 6 - 305 m                             & Furukawa                                 & 7                                        \\ \hline
-		Cabo UTP CAT 6 - 100 m                             & Furukawa                                 & 1                                        \\ \hline
-		Patch Cords CAT 6 - 2 m                            & Furukawa                                 & 36                                       \\ \hline
-		Patch Cords CAT 6 - 1,5m                              & Furukawa                                 & 36                                       \\ \hline
-		Tomadas (outlet) CAT6 c/ 1 ponto RJ45              & WEG                                      & 36                                       \\ \hline
-	\end{tabular}
-\caption{Tabela Componentes Passivos}
-\label{tab:passivos}
-\end{table}
+\input{passivos}
 
 \subsection{Identificação dos cabos}
-Explique como os cabos serão identificados em seu projeto. Coloque uma relação dos cabos instalados e identificados.
+
+Os cabos serão identificados com anilhas de plástico e capas coloridas com o objetivo de ter uma identificação permanente.
 
 \section{Implantação}
-Estabeleça um cronograma de implantação:
-Remoção de equipamentos existentes (destino para descarte), instalação dos condutores, instalação dos cabos, 
-identificação dos cabos, montagem dos racks, certificação, etc... Crie atividades e estabeleça o tempo de execução. Se for um projeto real, indique também quais os responsáveis pela execução do projeto e de cada uma das etapas.
 
-Defina marcas (e padrões) e fornecedores se for o caso. Atenção a contratados e subcontratados para a realização das atividades. Estabeleça a responsabilidade de execução da atividade e também da validação dela.
+O Cronograma de Implantação será realizado conforme a figura \ref{cronograma}.
 
-Utilize algum software para gerear o cronograma. Excel,etc. O fundamental é dividir em etapas, descrever e estimar o tempo de cada uma delas.
-
-Segue uma relação de ferramentas:
-http://asana.com/, 
-https://trello.com/, 
-http://www.ganttproject.biz/, 
-http://www.orangescrum.org/. 
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{cronograma}
+	\caption{Cronograma de Implantação}
+	\label{cronograma}
+\end{figure}
 
 \section{Plano de certificação}
 Quais seriam as etapas para a certificação? 
@@ -391,7 +328,9 @@ Quais relatórios de certificação serão (ou deveriam ser) entregues?
 Revisões periódicas na rede, emissão de certificados para novos pontos.
 
 \subsection{Plano de expansão}
-Existe um plano de expansão? Quantos novos pontos poderão ser acrecidos na rede, antes de migração de equipamentos na camada 2? Se houver expansão, quais equipamentos deverão ser direcionados para as estremidades da rede? 
+
+Em princípio não há plano de expansão, contudo os dois Patch Panels possuem 72 portas das quais serão utilizadas 64. Assim poderão ser instalados 8 novos pontos de rede caso necessário.
+Se não for suficiente os 8 pontos de rede disponíveis, então será preciso instalar novo Switch bem como os componentes passivos necessários, tais como Patch Panel, Patch Cords, etc.
 
 \section{Risco}
 Enumerar e explicar os riscos do projeto.
@@ -400,48 +339,19 @@ Enumerar e explicar os riscos do projeto.
 
 A tabela \ref{tab:orcPassivos} apresenta o orçamento dos equipamentos passivos.
 
-\begin{table}[]
-	\begin{tabular}{|l|l|l|l|l|}
-		\hline
-		\multicolumn{1}{|c|}{\textbf{Equipamento Passivo}} & \multicolumn{1}{c|}{\textbf{Fabricante}} & \multicolumn{1}{c|}{\textbf{Qt}} & \textbf{Preço} & \textbf{Total (R\$)} \\ \hline
-		Rack 44 U Fechado                                  & Furukawa                                 & 1                                & 3495,00        & 3495,00              \\ \hline
-		Patch Panel 36 Portas CAT 6                        & Furukawa                                 & 2                                & 255,00         & 510,00               \\ \hline
-		Cabo UTP CAT 6 - 305 m                             & Furukawa                                 & 7                                & 670,00         & 4690,00              \\ \hline
-		Cabo UTP CAT 6 - 100 m                             & Furukawa                                 & 1                                & 350,00         & 350,00               \\ \hline
-		Patch Cords CAT 6 - 2 m                            & Furukawa                                 & 36                               & 28,00          & 1008,00              \\ \hline
-		Patch Cords CAT 6 - 1,5m                           & Furukawa                                 & 36                               & 31,00          & 1116,00              \\ \hline
-		Tomadas (outlet) CAT6 c/ 1 ponto RJ45              & WEG                                      & 36                               & 77,00          & 2772,00              \\ \hline
-	\end{tabular}
-\caption{Tabela de Orçamento dos Equipamentos Passivos}
-\label{tab:orcPassivos}
-\end{table}
+\input{orcPassivos}
 
-A tabela \ref{tab:orcEncaminhamentos} apresenta o orçamento dos equipamentos passivos.
+A tabela \ref{tab:orcEncaminhamentos} apresenta o orçamento dos encaminhamentos.
 
-\begin{table}[]
-	\begin{tabular}{|l|l|l|l|l|}
-		\hline
-		\multicolumn{1}{|c|}{\textbf{Encaminhamento}} & \multicolumn{1}{c|}{\textbf{Fabricante}} & \multicolumn{1}{c|}{\textbf{Qt}} & \textbf{Preço} & \textbf{Total (R\$)} \\ \hline
-		Canaleta X2 Adesivada                         & Dutoplast                                & 36                               & 31,00          & 1116,00              \\ \hline
-		Acabamento X2                                 & Dutoplast                                & 36                               & 5,00           & 180,00               \\ \hline
-	\end{tabular}
-	\caption{Tabela de Orçamento dos Encaminhamentos}
-	\label{tab:orcEncaminhamentos}
-\end{table}
+\input{orcEncaminhamentos}
 
 A tabela \ref{tab:orcAtivos} apresenta os equipamentos ativos do cabeamento estruturado.
 
-\begin{table}[]
-	\begin{tabular}{|l|l|l|l|l|}
-		\hline
-		\multicolumn{1}{|c|}{\textbf{Equipamento Ativo}} & \multicolumn{1}{c|}{\textbf{Fabricante}} & \multicolumn{1}{c|}{\textbf{Qt}} & \textbf{Preço} & \textbf{Total (R\$)} \\ \hline
-		Switch 36 Portas                                 & Sun Oracle                               & 2                                & 1360,00        & 2720,00              \\ \hline
-		Roteador RV340                                   & Cisco                                    & 1                                & 2242,00        & 2242,00              \\ \hline
-		Servidor PowerEdge T140                          & Dell                                     & 2                                & 3600,00        & 7200,00              \\ \hline
-	\end{tabular}
-\caption{Tabela de Orçamento dos Equipamentos Ativos}
-\label{tab:orcAtivos}
-\end{table}
+\input{orcAtivos}
+
+O somatório dos valores é R\$ 27399,00
+
+Porém podemos colocar uma margem de segurança de 10\% sobre o somatório dos valores, pois poderão surgir itens necessários não orçados. Assim, com esta margem, tem-se um total estimado de R\$ 30138,90. 
 
 \section{Recomendações}
 Observações e recomendações para o cliente.
@@ -458,72 +368,6 @@ Analisando os pressupostos de \cite{ref3} e \cite{ref4} concluimos que....
 \bibliographystyle{ieeetr}
 \bibliography{referencias}  
 
-%% ***********************************************************************
-%% === remover daqui =====================================================
-%% ***********************************************************************
-=================================================
-\section{Elementos textuais - Alguns exemplos}
-
-Esta seção apresenta exemplos de elementos textuais. \textbf{Remova-a da versão final do texto}.
-
-
-\subsection{Colocar elementos em itens}
-
-Texto antes da lista
-
-\begin{itemize}
-	\item First item in a list 
-	\item Second item in a list 
-	\item Third item in a list
-\end{itemize}
-
-\subsubsection{Uma subseção de terceiro nivel}
-
-Exemplo de uma subseção
-
-\subsection{Tabelas}
-
-Utilize o site http://www.tablesgenerator.com/ para elaborar as tabelas de seu trabalho.
-Para adicionar uma tabela utilize: a tag input, passando o arquivo da tabela como parametro
-
-\input{tab2}
-
-Dentro do arquivo você deve definir o label e pode utilizá-lo para referenciar. Exemplo:
-Na tab \ref{tab2} temos a relação de ....
-
-
-Você também pode modificar a tabela manualmente, incluindo, por exemplo h! dentro de sua definição. Veja no exemplo tab2.tex
-
-\subsection{Figuras}
-
-As figuras podem ser no formato PDF, JPG, PNG. Você pode referenciá-las da mesma maneira que tabelas. Exemplo: A figura \ref{fig1} apresenta.....
-
-Não se preocupe o local em que a figura será renderizada em seu texto. Preocupe-se em criar referência para ela, ou seja, toda figura e tabela deve conter pelo menos uma referência no texto.
-
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{fig1}
-\caption{Exemplo de figura com escala horizontal}
-\label{fig1}
-\end{figure}
-
-
-\begin{figure}
-	\centering
-	\includegraphics[]{fig2}
-	\caption{Exemplo de figura sem escala}
-	\label{fig2}
-\end{figure}
-
-Você pode rotacionar figuras também. Para isso utilize o parâmetro angle=-90. Repare que a escala da figura foi modificada pelo parametro height. Você também pode utilizar scale
-
-\begin{figure}
-	\centering
-	\includegraphics[height=\textwidth,angle=-90]{fig3}
-	\caption{Exemplo de figura rotacionada}
-	\label{fig3}
-\end{figure}
-
 \begin{figure}
 	%	\centering
 	\includegraphics[height=\textwidth,angle=-90,scale=0.8]{planta2d}
@@ -537,68 +381,5 @@ Você pode rotacionar figuras também. Para isso utilize o parâmetro angle=-90.
 	\caption{Planta baixa cabeada}
 	\label{planta2d_cabeada}
 \end{figure}
-
-Você também pode inserir páginas de outro tamanho em seu texto. Isto irá ajudar a inserir imagens maiores, como as desenvolvidas em CAD. Segue um exemplo na figura \ref{fig4} e figura \ref{fig5}.
-
-
-%inicio dos comandos para criar uma nova pagina A3
-\clearpage
-\KOMAoptions{paper=a3, pagesize}
-\recalctypearea
-
-\begin{figure}
-	\centering
-	\makebox[\textwidth][c]{
-		\includegraphics[height=\textheight]{fig3}}
-	\caption{Exemplo de figura inserida em uma página A3}
-	\label{fig4}
-\end{figure}
-
-%Retornar ao formato A4
-\clearpage
-\KOMAoptions{paper=a4, pagesize}
-\recalctypearea
-%-- reinicio em A4 
-
-
-%inicio dos comandos para criar uma nova pagina A3 horizontal
-\clearpage
-\KOMAoptions{paper=a3, paper=landscape, DIV=20}
-\recalctypearea
-
-	
-\begin{figure}
-%	\centering
-	\noindent\makebox[\textwidth][c]{
-		\includegraphics[width=\textwidth]{fig3}
-	}
-	\caption{Exemplo de figura inserida em uma página A3 no formato horizontal}
-	\label{fig5}
-\end{figure}
-
-%Retornar ao formato A4
-\clearpage
-\KOMAoptions{paper=a4, paper=portrait, DIV=15}
-\recalctypearea
-%-- reinicio em A4 
-
-
-\subsubsection{Resumo gráfico}
-
-Você pode optar por fazer um resumo no formato de mapa mental/conceitual. 
-Aqui foi utilizado o site https://app.mindmup.com para gerar o mapa.
-
-Para utilizar o resumo gráfico, remova o texto da seção resumo (linha 137) e inclua o código para inserir a figura, conforme figura \ref{fig6}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\textwidth,height=5cm,keepaspectratio]{fig4}
-	\caption{Exemplo de resumo gráfico}
-	\label{fig6}	
-\end{figure}
-
-%% ***********************************************************************
-%% === ate aqui    =====  ================================================
-%% ***********************************************************************
 
 \end{document}
